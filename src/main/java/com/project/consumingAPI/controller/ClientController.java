@@ -43,7 +43,7 @@ public class ClientController{
 	
 		modelAndView = new ModelAndView("clients/client");
 		
-		RequestEntity<Void> request = RequestEntity.get(URI.create(URI_BASE + "/listar"))
+		RequestEntity<Void> request = RequestEntity.get(URI.create(URI_BASE + "/list"))
 				.header("Authorization", credencial).build();
 		
 		ResponseEntity<Client[]> response = restTemplate.exchange(request, Client[].class);

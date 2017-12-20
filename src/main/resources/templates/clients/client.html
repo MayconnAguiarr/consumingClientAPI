@@ -1,31 +1,51 @@
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-  <title>clients</title>
-</head>
- 
-<body>
-  <h1>costumer list</h1>
- 
-  <table>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>Cpf</th>
-        <th>address</th>
-        <th>obs</th>
-      </tr>
-    </thead>
- 
-    <tbody>
-      <tr th:each="client: ${clients}">
-        <td th:text="${client.id}"></td>
-        <td th:text="${client.Name}"></td>
-        <td th:text="${client.Cpf}"></td>
-        <td th:text="${client.address}"></td>
-        <td th:text="${client.obs}"></td>
-      </tr>
-    </tbody>
-  </table>
-</body>
+    <head>
+        <title>Clients</title>
+        
+        <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+            rel="stylesheet" />
+        
+        <link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
+            rel="stylesheet" />
+        
+        <link th:href="@{/webjars/font-awesome/css/font-awesome.min.css}"
+            rel="stylesheet" />
+        
+        <link th:href="@{/css/style.css}" rel="stylesheet" />
+    </head>
+
+    <body>    
+        <div class="container">
+            <div class="page-header">
+                <h1>Costumer list</h1>
+            </div>
+            
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Cpf</th>
+                        <th>Address</th>
+                        <th>Obs</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr th:each="client: ${clients}">
+                        <td th:text="${client.id}"></td>
+                        <td th:text="${client.name}"></td>
+                        <td th:text="${client.cpf}"></td>
+                        <td th:text="${client.address}"></td>
+                        <td th:text="${client.obs}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    </body>
 </html>
